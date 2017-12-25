@@ -1,0 +1,81 @@
+*{
+	padding:0;
+	margin:0;
+	list-style:none;
+}
+
+
+
+html,body,#wrap ul{
+	width:100%;
+	height:100%;
+	
+}
+
+body{
+	
+	font-size:0.32rem;
+}
+
+#wrap{
+	display: flex;
+	flex-direction: column;
+}
+
+.targe{
+	width:100%;
+	height:70px;
+	border-bottom:1px solid #ccc;
+	position: relative;
+}
+
+.targe dl{
+	width:100%;
+	height:100%;
+	box-sizing:border-box;
+	padding:10px;
+	display: flex;
+	position:absolute;
+	z-index:1;
+	background:#fff;
+	transition:all .6s;
+	top:0;
+	left:0;
+	
+	
+}
+
+
+.targe dl dt{
+	width:50px;
+	height:50px;
+	border-radius:30px;
+	background:#eee;
+	
+}
+
+.targe dl dt img{
+	width:100%;
+	height:100%;
+}
+
+.targe dl dd{
+	flex:1;
+	box-sizing: border-box;
+	padding:10px;
+	
+}
+
+.targe .del{
+	width:100px;
+	height:100%;
+	background:red;
+	position:absolute;
+	right:0;
+	top:0;
+	box-sizing: border-box;
+	padding:25px;
+	font-size:20px;
+	z-index:0;
+}
+

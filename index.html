@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" >
+    <meta name="format-detection" content="telephone=no,email=no,adress=no">
+    <link rel="stylesheet" type="text/css" href="css/style.css"/>
+    <script>
+    	document.documentElement.style.fontSize=window.innerWidth/375*50+'px'
+    </script>
+		<title></title>
+	</head>
+	<body>
+		<div id='wrap'>
+			
+			<ul class="list">
+				<li class="targe">
+					<dl>
+						<dt>
+						<img src="img/08032fd5bbec1d66f6eb67fe6587541b.jpg"/>
+						</dt>
+						<dd>
+							<h3>帅无罪</h3>
+							<p>我这么帅让别人怎么活！</p>
+						</dd>
+					</dl>
+					<div class="del">
+						删除
+					</div>
+				</li>
+				<li class="targe">
+					<dl>
+						<dt>
+						<img src="img/1U0163603-0-lp.jpg"/>
+						</dt>
+						<dd>
+							<h3>王校草</h3>
+							<p>八维校草王尼玛</p>
+						</dd>
+					</dl>
+					<div class="del">
+						删除
+					</div>
+				</li>
+				<li class="targe">
+					<dl>
+						<dt>
+						<img src="img/7496c8dad2527444164d4ea0e719ce83.jpg"/>
+						</dt>
+						<dd>
+							<h3>班主任</h3>
+							<p>赶紧回宿舍，不然签单了！</p>
+						</dd>
+					</dl>
+					<div class="del">
+						删除
+					</div>
+				</li>
+			</ul>
+		</div>
+	</body>
+	
+	<script>
+	var lis=document.querySelectorAll('li')
+	var dl=document.querySelectorAll('dl')
+	var del=document.querySelectorAll('.del')
+	var ul=document.querySelector('ul')
+	 function swiperLeft(dom,fun){
+	 	console.log(dom)
+	 	var startx,starty,movex,movey;
+	 	for(let i=0;i<dom.length;i++){
+	 		dom[i].addEventListener('touchstart', function(e){
+	 		var touch=e.touches[0];
+	 		startx=touch.clientX;
+	 	   starty=touch.clientY;
+	 		
+	 		
+	 	},false)
+	 	dom[i].addEventListener('touchmove',function(e){
+	 			var touch=e.touches[0];
+	 		    movex=touch.clientX;
+	 		    movey=touch.clientY;
+	 	
+	 		
+	 		},false)
+	 	
+	 	dom[i].addEventListener('touchend',function(e){
+	 		var x=movex-startx
+	 		
+	 	    var y=movey-starty
+	 	   
+	 	    if(x<-50 && Math.abs(y)<20){
+	 	  this.children[0].style.left=-100+'px'
+	 	   del[i].onclick=function(){
+	 	   ul.removeChild(lis[i])
+	 	   }
+	 	    }else if(x>50 && Math.abs(y)<20){
+	 	    	 this.children[0].style.left=0+'px'
+	 	    }
+	 	    	 
+	 	    
+	 	},false)
+	 		
+	 	}
+	 	
+	 }
+	swiperLeft(lis,function(){
+		
+	})
+	</script>
+</html>
